@@ -1,0 +1,17 @@
+#!/bin/bash -e
+
+# vars
+DATADIR=${DATADIR:-/data}
+TIMEOUT=${TIMEOUT:-86400}
+
+backup_and_wait() {
+    while true
+        do
+            /ghbackup "$@" ${DATADIR}
+            sleep $TIMEOUT
+        done
+}
+
+backup_and_wait "$@"
+
+wait
