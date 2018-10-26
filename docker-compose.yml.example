@@ -1,0 +1,7 @@
+githubsync:
+    image: inanimate/rpi-ghbackup:latest
+    environment:
+        - TIMEOUT=900
+    command: -account qvl -secret 9if0751f556ea7c5f97d650649e3dbcb27a9a8b1
+    volumes:
+        - /mnt/drive/github_repos:/data
